@@ -43,12 +43,12 @@ bool RigidBody::checkAreaAndDensity(float& area, float& density, std::string& ou
 
 	if (area < PhysicsWorld::GetMinBodySize())
 	{
-		out_err = "Circle radius is too small. Min circle area is " + std::to_string(PhysicsWorld::GetMinBodySize()) + ".";
+		out_err = "Body area is too small. Min circle area is " + std::to_string(PhysicsWorld::GetMinBodySize()) + ".";
 		return false;
 	}
 	if (area > PhysicsWorld::GetMaxBodySize())
 	{
-		out_err = "Circle radius is too large. Max circle area is " + std::to_string(PhysicsWorld::GetMaxBodySize()) + ".";
+		out_err = "Body area is too large. Max circle area is " + std::to_string(PhysicsWorld::GetMaxBodySize()) + ".";
 		return false;
 	}
 	if (density < PhysicsWorld::GetMinDensity())
