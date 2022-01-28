@@ -15,7 +15,7 @@ void GetPolygonAABB(std::vector<glm::vec2>& vertices, AABB& o_aabb)
 	}
 	o_aabb.size -= o_aabb.position;
 }
-glm::vec2 GetPolygonCenter(std::vector<glm::vec2>& vertices)
+glm::vec2 Physics2D::GetPolygonCenter(std::vector<glm::vec2>& vertices)
 {
 	glm::vec2 sum_center(0.0f, 0.0f);
 	float sum_weight = 0.0f;
