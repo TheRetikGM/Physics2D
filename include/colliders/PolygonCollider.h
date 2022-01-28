@@ -11,4 +11,5 @@ namespace Physics2D
 		void UpdateAABB() override;
 	protected:
 	};
+	glm::vec2 GetPolygonCenter(std::vector<glm::vec2>& vertices);
 }
