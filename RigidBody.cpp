@@ -40,25 +40,26 @@ void RigidBody::SetUnitConverter(MeterUnitConverter* converter)
 }
 bool RigidBody::checkAreaAndDensity(float& area, float& density, std::string& out_err)
 {
-
+	std::string sArea = std::to_string(area);
 	if (area < PhysicsWorld::GetMinBodySize())
 	{
-		out_err = "Body area is too small. Min circle area is " + std::to_string(PhysicsWorld::GetMinBodySize()) + ".";
+		out_err = "Body area (" + sArea + ") is too small. Min area is " + std::to_string(PhysicsWorld::GetMinBodySize()) + ".";
 		return false;
 	}
 	if (area > PhysicsWorld::GetMaxBodySize())
 	{
-		out_err = "Body area is too large. Max circle area is " + std::to_string(PhysicsWorld::GetMaxBodySize()) + ".";
+		out_err = "Body area (" + sArea + ") is too large. Max area is " + std::to_string(PhysicsWorld::GetMaxBodySize()) + ".";
 		return false;
 	}
+	std::string sDensity = std::to_string(density);
 	if (density < PhysicsWorld::GetMinDensity())
 	{
-		out_err = "Density is too small. Min density is " + std::to_string(PhysicsWorld::GetMinDensity()) + ".";
+		out_err = "Density (" + sDensity + ") is too small. Min density is " + std::to_string(PhysicsWorld::GetMinDensity()) + ".";
 		return false;
 	}
 	if (density > PhysicsWorld::GetMaxDensity())
 	{
-		out_err = "Density is too large. Max density is " + std::to_string(PhysicsWorld::GetMaxDensity()) + ".";
+		out_err = "Density (" + sDensity + ") is too large. Max density is " + std::to_string(PhysicsWorld::GetMaxDensity()) + ".";
 		return false;
 	}
 	return true;
